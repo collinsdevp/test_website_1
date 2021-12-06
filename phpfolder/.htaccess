@@ -1,0 +1,10 @@
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+<FilesMatch "\.(php|html)$">
+Header set X-Frame-Options "DENY"
+Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
+Header set Content-Security-Policy "upgrade-insecure-requests; "
+Header set Referrer-Policy "no-referrer"
+Header set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=()"
+</FilesMatch>
+</IfModule>
